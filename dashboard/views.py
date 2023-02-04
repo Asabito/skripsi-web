@@ -16,6 +16,7 @@ def dashboard(request):
             ispu_data['category'] = i['category']
             ispu_data['class'] = transform_to_class_name(i['category'])
             ispu_data['description'] = i['description']
+            ispu_data['suggestion'] = i['suggestion']
             break
 
     date = datetime.now().astimezone(JAKARTA)

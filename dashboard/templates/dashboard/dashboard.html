@@ -16,6 +16,44 @@
     </head>
 
     <body class="padding-top-10 bg">
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="modal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ISPU</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col d-flex justify-content-center">
+                                    <div class="row category {{ ispu.class }}">
+                                        {{ ispu.category }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">{{ ispu.description }}</div>
+                            <div class="row" style="white-space: pre-line">
+                                {{ ispu.suggestion }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container glass-bg p-5">
             <!-- title and logo -->
             <div class="row align-items-center p-2">
@@ -90,7 +128,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ispu-deskripsi">{{ ispu.description }}</div>
+                    <div class="ispu-deskripsi">
+                        {{ ispu.description }}
+                        <br />
+                        <button
+                            class="btn btn-link"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modal"
+                            style="padding-left: 0"
+                        >
+                            Baca selengkapnya
+                        </button>
+                    </div>
                 </div>
                 <div class="ms-1 card p-2" style="height: 455px; width: 70%">
                     <iframe
